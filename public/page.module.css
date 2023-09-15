@@ -1,0 +1,74 @@
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  background-image: url('../public/back2.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.description {
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 200;
+  color: white;
+  max-width: var(--max-width);
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+
+.grad {
+  background-image: linear-gradient(rgb(118, 6, 6), rgb(0, 0, 0));
+}
+
+.grad_2 {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(rgb(118, 6, 6), rgb(0, 0, 0));
+}
+
+.form{
+  width: 30px;
+  height: 30px;
+  transform: scale(1.2);
+}
+
+.custom-checkbox-lg .form-check-input {
+  transform: scale(1.5);
+  margin-right: 0.7rem;
+}
+
+.custom-checkbox-lg .form-check-label {
+  padding-top: 0.4rem;
+}
+
+
+
+
+.description a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.description p {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
+
