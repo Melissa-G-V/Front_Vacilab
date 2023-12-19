@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="Vacilab.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.24275744"
+     inkscape:cx="-247.1603"
+     inkscape:cy="1371.7397"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g38440" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient38888">
+      <stop
+         style="stop-color:#aa00d4;stop-opacity:1;"
+         offset="0"
+         id="stop38884" />
+      <stop
+         style="stop-color:#7137c8;stop-opacity:1"
+         offset="1"
+         id="stop38886" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect34324"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect31325"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect30338"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect30216"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect5032"
+       is_visible="true"
+       lpeversion="1" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1088">
+      <rect
+         style="fill:#7f2aff;fill-opacity:0.512702;stroke:#000000;stroke-width:0.161927"
+         id="rect1090"
+         width="275.20142"
+         height="297.48053"
+         x="-59.41135"
+         y="-40.073643"
+         ry="0.16173682" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath20504">
+      <rect
+         style="fill:#9c62a9;fill-opacity:1;stroke:none;stroke-width:0.153458"
+         id="rect20506"
+         width="76.297455"
+         height="127.93313"
+         x="60.498497"
+         y="21.579082"
+         ry="0.15671006" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath26138">
+      <rect
+         style="opacity:0.138833;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.475512"
+         id="rect26140"
+         width="270.29968"
+         height="298.51947"
+         x="-105.25573"
+         y="1.1382902"
+         ry="0.15804912" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient38888"
+       id="linearGradient38890"
+       x1="117.50248"
+       y1="225.24646"
+       x2="117.00098"
+       y2="92.851372"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g30179"
+       transform="matrix(-1,0,0,1.0268211,162.15756,-3.262542)" />
+    <g
+       id="g38440"
+       transform="matrix(1.0866557,0,0,1.0866557,-17.059052,-16.974536)"
+       inkscape:export-filename="C:\Users\melis\Desktop\Vacilab\front\vacilab\public\Vacilab.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600">
+      <g
+         id="g39138"
+         inkscape:export-filename="C:\Users\melis\Desktop\Vacilab\front\vacilab\public\PlaceHolder.png"
+         inkscape:export-xdpi="600"
+         inkscape:export-ydpi="600"
+         transform="matrix(1.091954,0,0,1.2337662,-7.3462286,-34.835609)">
+        <rect
+           style="opacity:1;fill:url(#linearGradient38890);fill-opacity:1;stroke:none;stroke-width:0.141221"
+           id="rect38786"
+           width="87.260406"
+           height="77.230476"
+           x="79.890236"
+           y="149.019"
+           ry="0.062038761" />
+        <ellipse
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.141221"
+           id="path39042"
+           cx="123.01894"
+           cy="199.92088"
+           rx="16.298639"
+           ry="12.537415" />
+        <ellipse
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0815889"
+           id="ellipse39124"
+           cx="206.53343"
+           cy="5.5061393"
+           rx="9.4163694"
+           ry="7.243361"
+           transform="rotate(60)" />
+        <ellipse
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0815889"
+           id="ellipse39126"
+           cx="83.370064"
+           cy="218.32985"
+           rx="9.4163694"
+           ry="7.243361"
+           transform="matrix(-0.5,0.8660254,0.8660254,0.5,0,0)" />
+        <ellipse
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0815889"
+           id="ellipse39128"
+           cx="83.76001"
+           cy="200.60355"
+           rx="9.4163694"
+           ry="7.243361"
+           transform="matrix(-0.5,0.8660254,0.8660254,0.5,0,0)" />
+        <ellipse
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0815889"
+           id="ellipse39130"
+           cx="206.67261"
+           cy="-11.78583"
+           rx="9.4163694"
+           ry="7.243361"
+           transform="rotate(60)" />
+      </g>
+    </g>
+  </g>
+</svg>

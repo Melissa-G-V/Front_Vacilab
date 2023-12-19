@@ -1,11 +1,9 @@
 
 .main {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem;
-  background-image: url('../public/back2.png');
+  background-image: linear-gradient(rgb(249, 209, 229),rgb(212, 251, 212));
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13,62 +11,163 @@
 }
 
 
-.description {
-  justify-content: center;
-  align-items: center;
-  font-size: 0.85rem;
-  font-weight: 200;
-  color: white;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
+
+.navbar{
+  background-color: rgba(75, 38, 70, 0.83);
+
 }
 
 .grad {
-  background-image: linear-gradient(rgb(118, 6, 6), rgb(0, 0, 0));
+  background-image: linear-gradient( rgba(79, 13, 49, 0.25),rgba(25, 25, 24, 0.136));
 }
 
-.grad_2 {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
+.front{
+  background-image: url(https://th.bing.com/th/id/OIP.A2heAAIweR_95NX6vNSy4AHaFj?rs=1&pid=ImgDetMain);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.accountblock {
   padding: 0;
-  background-image: linear-gradient(rgb(118, 6, 6), rgb(0, 0, 0));
-}
-
-.form{
-  width: 30px;
-  height: 30px;
-  transform: scale(1.2);
-}
-
-.custom-checkbox-lg .form-check-input {
-  transform: scale(1.5);
-  margin-right: 0.7rem;
-}
-
-.custom-checkbox-lg .form-check-label {
-  padding-top: 0.4rem;
-}
-
-
-
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
+  background-image: url(Cachorro.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
   position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
 }
 
 
+.account {
+  background-image: url(login_image.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+.accountblock .overlay {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.animalcard{
+  margin: 0 auto; 
+  display: block;
+  text-align: center;
+}
+.testimonial {
+  background-color: #ffffff42;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0 1.75rem;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+}
+
+.card{
+  border-radius: 2%;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+cursor: pointer;
+}
+
+.card:hover{
+   transform: scale(1.05);
+box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+font-weight: 600;
+}
+
+.card img{
+position: absolute;
+top: 20px;
+right: 15px;
+max-height: 120px;
+}
+
+.card1{
+background-image: url(Map.svg);
+    background-repeat: no-repeat;
+  background-position: right;
+  background-size: 50%;
+  opacity: 100;
+}
+
+.menu{
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card2{
+ background-image: url(DOGO.svg);
+    background-repeat: no-repeat;
+  background-position: right;
+  background-size: 50%;
+}
+
+@media(max-width: 990px){
+.card{
+  margin: 20px;
+}
+} 
+
+.footer{
+  background-image: linear-gradient( rgba(62, 15, 54, 0.847), rgb(33, 32, 33));
+}
+.footer_menu {
+	margin-bottom: 20px;
+}
+.footer_menu ul {
+	list-style: none;
+	text-align: center;
+}
+.footer_menu ul li{display: inline-block;}
+.footer_menu ul li a {
+	color:#fff;
+	padding: 0 10px;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
+}
+.footer_menu ul li a:hover{color:#554c86;}
+
+.footer_profile{margin-bottom:40px;}
+.footer_profile ul{
+list-style: outside none none;
+margin: 0;
+padding: 0
+}
+.footer_profile ul li{
+display: inline-block;
+}
+@media only screen and (max-width:480px) { 
+.footer_profile ul li{margin:2px;}
+}
+.footer_profile ul li a img{width:60px;}
+
+.footer_profile ul li a {
+	background: #554c86;
+	width: 40px;
+	height: 40px;
+	display: block;
+	text-align: center;
+	margin-right: 5px;
+	border-radius: 50%;
+	line-height: 40px;
+	box-sizing: border-box;
+	text-decoration: none;
+	-webkit-transition: .3s;
+	transition: .3s;
+	color: #fff;
+}
