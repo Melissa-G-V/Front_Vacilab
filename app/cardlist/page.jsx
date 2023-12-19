@@ -10,6 +10,8 @@ export default function CardList() {
     const [cards, setCards] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const { register, handleSubmit, reset } = useForm('');
+    const [showModal, setShowModal] = useState(false);
+    const [comments, setComment] = useState([])
 
     const router = useRouter()
   
@@ -23,44 +25,46 @@ export default function CardList() {
       getCards()
     }, [])
 
-    async function del(id) {    
-      const response = await fetch("http://localhost:3004/card/"+id, {
-        method: "DELETE"
-      })
-      const nwdata = cards.filter(card => card.id != id)
-      setCards(nwdata)
-    }
 
-  async function UpdateFav(id) {
-    console.log('ESTÀ FUNCIONANDO??')
-  const response = await fetch("http://localhost:3004/Card/" + id, {
-    method: "GET"
-  });
-  //console.log(response)
 
-  const data = await response.json();
+    // const CList = Array.isArray(comments) ? comments.map(com => (
+    //   <Modal key={com.id}
+    //     com={com}/> 
+    // )) : null;
 
-  console.log(data.favorite)
 
-  const favoriteVal = {
-    favorite: !data.favorite
-  };
 
-  fetch("http://localhost:3004/Card/" + id, {
-    method: "PATCH", 
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(favoriteVal)
-  });
+
+    // async function del(id) {    
+    //   const response = await fetch("http://localhost:3004/card/"+id, {
+    //     method: "DELETE"
+    //   })
+    //   const nwdata = cards.filter(card => card.id != id)
+    //   setCards(nwdata)
+    // }
+
+
+
+async function favor(id) {
+  console.log('Favoritado')
+  fetch("http://localhost:3004/card/favorite/" + id, {
+  method: "PATCH", 
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  //body: JSON.stringify()
+});
 }
 
+
   async function FilterCard(coll, filter_type){
-      const response = await fetch("http://localhost:3004/Card?"+coll+'='+filter_type,{
+      const response = await fetch("http://localhost:3004/card/find/"+coll+'/'+filter_type,{
         method: "GET"
       })
       const data = await response.json();
       console.log(data)
+      setCards(data)
+
       if(response.lenght === 0){
         console.log('No Data Not Seting')
       }else{
@@ -70,15 +74,15 @@ export default function CardList() {
 
   }
 
-const Principais = cards.filter(card => card.favorite);
-const Secundarios = cards.filter(card => !card.favorite);
-const Ajustados = [...Principais, ...Secundarios];
+// const Principais = cards.filter(card => card.favorite);
+// const Secundarios = cards.filter(card => !card.favorite);
+// const Ajustados = [...Principais, ...Secundarios];
 
 
-    const CardList = Ajustados.map(card => (
+    const CardList = cards.map(card => (
         <Lista key={card.id}
           card={card}
-          favoritar={() => UpdateFav(card.id)}
+          favoritar={() => favor(card.id)}
           alter={() => router.push('update/'+card.id)}
           deleting={() => del(card.id)}
 

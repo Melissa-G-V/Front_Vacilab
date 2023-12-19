@@ -1,11 +1,51 @@
 'use client'
-import { useEffect, useState } from "react"
+import { useEffect, useState,useContext } from "react"
 import { useRouter } from "next/navigation"
+import {ClientsContext} from "../contexts/usuario";
 
+import Modal from './modal.jsx'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Swal from 'sweetalert2'
 
 export default function Lista(props) {
+  const {userId, userAdmin} = useContext(ClientsContext)
+  const [currentCardId, setCurrentCardId] = useState(null);
+
+  const [showModal, setShowModal] = useState(false);
+  const [comments, setComment] = useState([])
+
+
+  useEffect(() => {
+    async function getC() {
+     const response = await fetch('http://localhost:3004/comment/card/' + currentCardId)
+     const dados = await response.json()
+     setComment(dados)
+    }
+    if (currentCardId) {
+     getC()
+    }
+   }, [currentCardId])
+   
+
+  // async function Favorite(id) {
+  //   console.log('Favoritado')
+  //   fetch("http://localhost:3004/comment/favorite/" + id, {
+  //   method: "PATCH", 
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   //body: JSON.stringify()
+  // });
+  // }
+
+  
+  const CList = Array.isArray(comments) ? comments.map(com => (
+    <Modal key={com.id}
+      com={com} favs={()=> Favorite(com.id)}/> 
+  )) : null;
+
+
+
 
     function isFave(favorito, id){
         if(favorito){
@@ -14,7 +54,7 @@ export default function Lista(props) {
               props.favoritar();
               window.location.reload();
             }}>
-            <i className="bi bi-star-fill text-white " style={{fontSize: 16}} title="Favorito"> Favorito
+            <i className="bi bi-star-fill text-white " style={{fontSize: 16}} title="Favorito"> Destacado
             </i>
         
         </button>
@@ -26,7 +66,7 @@ export default function Lista(props) {
               window.location.reload();
             } }>
             <i className="bi bi-star text-white " style={{fontSize: 16}}
-            title="Favorito"> Não favorito</i>
+            title="Favorito"> Não Destacado</i>
             </button>
         )
         }
@@ -85,24 +125,7 @@ export default function Lista(props) {
         return(icons)
     }
 
-    
-    async function UpdateFav(id) {
-      const response = await fetch("http://localhost:3004/Card/" + id, {
-        method: "GET"
-      });
-      const data = await response.json();
-      const favoriteVal = {
-        favorite: !data.favorite
-      };
-    
-      fetch("http://localhost:3004/Card/" + id, {
-        method: "PATCH", 
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(favoriteVal)
-      });
-    }
+
     
 
     function isType(type){
@@ -139,11 +162,35 @@ export default function Lista(props) {
                 <ul className="list-group list-group-flush">
                 <li className="list-group-item text-center"><span className="badge text-black bg-warning">Power: </span> {isPow(props.card.power)}</li>
                 <li className="list-group-item text-center"><span className="badge text-black bg-warning">Defence: </span> {isDef(props.card.defence)}</li>
+                {userAdmin?
+                
                 <li className="list-group-item text-center"> <span>{isFave(props.card.favorite)}</span>
-                </li>
+                </li>:
+                <></>
+                }
                 <li className="list-group-item text-center">
-                  <button type="button" onClick={props.alter} className="btn btn-info" ><i className="bi bi-hammer"></i></button> <button type="button" className="btn btn-danger mx-2" onClick={props.deleting}><i className="bi bi-trash2-fill" ></i></button>
-                </li>
+                  {userAdmin ?
+                  <>
+                  <button type="button" onClick={props.alter} className="btn btn-info" ><i className="bi bi-hammer"></i></button>
+                   <button type="button" className="btn btn-danger mx-2" onClick={props.deleting}><i className="bi bi-trash2-fill" ></i></button>
+                  </>:
+                  <></>
+                  }
+                  { userId ?
+                  <>
+                  {/* onClick={() => setShowModal(true)}> */}
+                    <button type="button" className="btn btn-secondary" onClick={(event) => {setCurrentCardId(props.card.id), setShowModal(true, event.currentTarget.id)}}>Commentar                   
+                    <i className="bi bi-chat-square-dots"></i>
+</button>
+                  <div className="row">
+                  {showModal && <Modal comments={comments} onClose={() => setShowModal(false)} currentCardId={currentCardId}/>}
+
+                  </div>
+                  </>
+                     :
+                    <></>
+                  }
+                  </li>
                 </ul>
                 </div>
             </div>

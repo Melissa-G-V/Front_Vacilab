@@ -20,7 +20,8 @@ export default function SingUp() {
         body: JSON.stringify({ ...data })
       },
     )
-   
+    console.log(data)
+
   }
     
       return(
@@ -31,7 +32,7 @@ export default function SingUp() {
         <form onSubmit={handleSubmit(Sent)}>
         <div className=" form-group col px-4 mt-2">
           <div className="mb-3">
-            <label htmlFor="nickname" className="form-label">Nome</label>
+            <label htmlFor="nickname" className="form-label">NickName</label>
             <input type="text" className="bg-secondary text-white form-control form-control-sm" id="nickname" placeholder="JackofTrades" {...register("nickname")} required/>
           </div>
         </div>
@@ -44,26 +45,18 @@ export default function SingUp() {
         <div className=" form-group col px-4">
           <div className="mb-3">
             <label htmlFor="pw" className="form-label">Senha</label>
-            <input type="text" className=" bg-secondary text-white form-control form-control-sm" id="password" placeholder="Must contain 1 number, 1 uppercase, 1 symbol" {...register("password")} required/>
+            <input type="text" className=" bg-secondary text-white form-control form-control-sm" id="password" placeholder="Must contain 1 number, 1 uppercase, 1 symbol" {...register("senha")} required/>
           </div>
         </div>
-        <div className=" form-group col px-4">
-          <div className="form-check form-switch form-switch-lg">
-            <input className="form-check-input" type="checkbox" id="recover" {...register("recover")}/>
-            <label className="form-check-label" htmlFor="recover">Enviar email de recuperação senha?</label>
-          </div>
-        </div>
+
         <div className='form-group col'>
           <div className="d-grid gap-2">
             <br/>
             <button className="btn btn-danger text-black" type="submit">Cadastrar</button>
           </div>
         </div>
-         </form>
+        </form>
       </div>
-     
-        
-      )
-
-    
+      
+    )
   }

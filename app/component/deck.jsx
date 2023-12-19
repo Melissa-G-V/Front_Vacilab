@@ -3,23 +3,7 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 
 
-const Deck = ({deck, cards, deleting , favs}) => {
-  const Deck_Cards = [deck.card_0, deck.card_1, deck.card_2,deck.card_3,deck.card_4,deck.card_5];
-  const [DefValueSum, setDefValueSum] = useState(0);
-  const [PowerValueSum, setPowerValueSum] = useState(0);
-  useEffect(() => {
-    const dfsum = Deck_Cards.reduce((sm, Deck_Cards_Id) => {
-      const card = cards.find((card) => card.id === Deck_Cards_Id);
-      return sm + (card ? card.defence : 0);
-    }, 0);
-    setDefValueSum(dfsum);
-
-    const pwSum = Deck_Cards.reduce((sm, Deck_Cards_Id) => {
-      const card = cards.find((card) => card.id === Deck_Cards_Id);
-      return sm + (card ? card.power : 0);
-    }, 0);
-    setPowerValueSum(pwSum);
-  }, [cards, Deck_Cards]);
+const Deck = ({deck,  deleting , favs}) => {
 
   
   function isType(type){
@@ -131,41 +115,55 @@ function isFave(favorito, id){
               <div className="my-2">
                 <div className="card bg-dark">
                         <div className="card-header bg-dark text-white">
-                            <h3>{deck.deckname}</h3> <span className="badge bg-dark  text-white">{isFave(deck.favor)}</span>
+                            <h3>{deck.deckName}</h3> <span className="badge bg-dark  text-white">{isFave(deck.deckfav)}</span>
                         </div>
+
                         <ul className="list-group list-group-flush  text-white bg-dark">
-                        
-                            <li className="list-group-item   text-white bg-dark">
-                              {Deck_Cards.map((Deck_Cards_Id, index) => {
+
+                            <li className="list-group-item   text-white bg-dark"><h6>Cards</h6>
+                            {deck.cards.map(card => card.name).join(', ')}
+
+                              {/* {Deck_Cards.map((Deck_Cards_Id, index) => {
                                 const card = cards.find((card) => card.id === Deck_Cards_Id);
                                 return <span key={Deck_Cards_Id} className='mx-2'>{isType(card ? card.type : "N/A")}</span>;
-                              })}
+                              })} */}
                             </li>
-                            
-                            <li className="list-group-item  text-white bg-dark"> <h6>Max Power</h6> {isPow(PowerValueSum)}</li>
-                            <li className="list-group-item  text-white bg-dark">
-                            <h6>Max Defence</h6> 
+                            <li className="list-group-item  text-white bg-dark"><h6>Type</h6>
+                            {deck.cards.map(card => isType(card.type))}
 
-                              {isDef(DefValueSum)}
-                            </li>
-
-                            <li className="list-group-item  text-white bg-dark">
-                              {Deck_Cards.map((Deck_Cards_Id, index) => {
+                              {/* {Deck_Cards.map((Deck_Cards_Id, index) => {
                                 const card = cards.find((card) => card.id === Deck_Cards_Id);
                                 return <span className='mx-2' key={Deck_Cards_Id}>{card ? card.name : "N/A"}</span>;
-                              })}
+                              })} */}
                             </li>
+                            
+                            <li className="list-group-item  text-white bg-dark"> <h6>Max Power</h6>
+                            
+                            {isPow(deck.cards.reduce((sum, card) => sum + card.power, 0))}
+        {/*
+                             {isPow(PowerValueSum)}
+                              */}
+                             
+                             </li>
+                            <li className="list-group-item  text-white bg-dark"><h6>Max Defence</h6>
+                            {isDef(deck.cards.reduce((sum, card) => sum + card.defence, 0))}
+
+                            {/* <h6>Max Defence</h6> 
+
+                              {isDef(DefValueSum)} */}
+                            </li>
+
                         </ul>
-                        <div className="card-footer bg-dark">
+                        <div className="card-footer bg-dark">                          
                         <div className="btn-group" role="group" aria-label="Basic example">
                         <button type="button" className="btn btn-danger" 
                         onClick={() => {
-                          deleting(deck.id);
+                          deleting(deck.deckid);
                           window.location.reload();
                         }}
                         >Delete</button>
                         <button type="button" className="btn btn-secondary" onClick={() => {
-                          favs(deck.id);
+                          favs(deck.deckid);
                           window.location.reload();
                         }}>Favorite</button>
                         </div>

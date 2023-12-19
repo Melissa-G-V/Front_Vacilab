@@ -1,15 +1,18 @@
 'use client'
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { useRouter } from "next/navigation"
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styles from 'public/page.module.css'
 import Lista from '../../component/list'
 import { useForm } from "react-hook-form";
 import { useParams } from "next/navigation"
+import {ClientsContext} from "../../contexts/usuario";
 
 export default function Update() {
     const [imgUrl, setImgUrl] = useState('');
     const { register, handleSubmit, reset } = useForm('');
+    const {userToken} = useContext(ClientsContext)
+
     const params = useParams()
     const router = useRouter()
 
@@ -37,7 +40,10 @@ export default function Update() {
         const filme = await fetch("http://localhost:3004/card/"+params.id,
           {
             method: "PUT",
-            headers: { "Content-type": "application/json" },
+            headers: { 
+              "Content-type": "application/json",
+              "Authorization": `Bearer ${userToken}`
+            },
             body: JSON.stringify({ ...data })
           },
         )
@@ -57,7 +63,7 @@ export default function Update() {
             <div className="col-6">
             <form onSubmit={handleSubmit(UpdateCard)}>
         <div className="form-group text-white">
-        <label for="name">Card Name</label>
+        <label for="name">Card name</label>
         <input type="text" className="form-control bg-dark text-white" id="name" placeholder="The Warrior" {...register("name")} required />
         </div>
         <div className="form-group text-white">
